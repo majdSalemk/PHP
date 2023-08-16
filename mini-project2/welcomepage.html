@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+   
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color:#FDF0F6 ;
+}
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 200px;
+}
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      margin-left:3% ;
+      margin-top: 2%;
+
+    }
+  
+  
+  #logoo {
+    width: 70%; 
+     height: 80px;
+     border-radius: 50%;
+  }
+
+
+    .containeresule {
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+ 
+h1{
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    margin: 15px 0;
+    color: #4747D6 ;
+    margin-top: -9%;
+}
+.bton {
+    display: block;  
+    width: 20%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right , #9F0D7F ,#9F0D7F ,#9F0D7F );
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    background-size: 200%;
+    transition: .5s;
+    justify-content:end;
+    margin-right: 3%;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 1%;
+
+}
+
+    
+      
+      #showanswersbutton{
+        width: 90%;
+        padding: 1%;
+      }
+
+ @media (min-width:601px) and (max-width: 700pxb) {
+  .tablee   tr td {                                         
+  background-color: #F2F2F2 ;
+  font-size:12px; 
+  padding: 1%;
+ }
+ #showanswersbutton{
+        width: 100%;
+      }
+ }
+ @media (min-width:400px) and (max-width:600px) {
+  #divbutton{
+    width:100%;
+  }
+  #answer-table{
+      
+        width: 100%;
+      }
+      .thh{
+        font-size:small;
+      }
+      table,th,tr,td{
+        font-size: 15px;
+      }
+      .containeresule {
+        width:100%;
+        margin:0;
+
+      }
+  #showanswersbutton{
+    width:100%;
+  }
+ }
+ @media (max-width:400px) {
+  #divbutton{
+    width:100%;
+  }
+  #answer-table{
+      
+        width: 100%;
+       
+      }
+      table,th,tr,td{
+        padding:0;
+      }
+      .thh{
+        font-size:10px;
+      }
+      .containeresule {
+        width:100%;
+        margin:0;
+
+      }
+  #showanswersbutton{
+    width:100%;
+  }
+  #divbutton {
+    overflow-x:auto;
+  }
+ }
+ </style>
+</head>
+<body>
+  <header>
+  <div > 
+    <!-- <img class="logo" src="./images/logo.png" alt="logo"> -->
+  </div>
+  <a  class="bton" id="logout-btn"> Logout</a>
+
+  
+</header>
+  <section class="containeresule">
+    <div >
+      <img id="pic2" src="./images/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjExMDMtNDgteC5qcGc.webp" alt="pic2" style="width: 60%;  ">
+    </div>
+<h1>Welcome to AccessFlow!</h1> <br>
+<div>
+  <p>User Email: <span id="userEmail"></span></p>
+  <p>User Name: <span id="firstname"></span></p>
+  <p>User phonenumber: <span id="phonenumber"></span></p>
+  <p>User dateofbirth: <span id="dateofbirth"></span></p>
+  <p>User datecreated: <span id="datecreated"></span></p>
+
+</div>
+</div>
+
+<div id="divbutton">
+</div>
+  </section>
+</body>
+
+
+<script>
+  // Retrieve and display the stored email
+  const storedEmail = localStorage.getItem('email');
+  const storedfirstname = localStorage.getItem('firstname');
+  const storedphonenumber = localStorage.getItem('phonenumber');
+  const storeddateofbirth = localStorage.getItem('dateofbirth');
+  const storeddatecreated= localStorage.getItem('datecreated');
+
+  if (storedEmail) {
+      const userEmailElement = document.getElementById('userEmail');
+      const firstname = document.getElementById('firstname');
+      const phonenumber = document.getElementById('phonenumber');
+      const dateofbirth = document.getElementById('dateofbirth');
+      const datecreated = document.getElementById('datecreated');
+      userEmailElement.textContent = storedEmail;
+     firstname.textContent = storedfirstname;
+     phonenumber.textContent = storedphonenumber;
+     dateofbirth.textContent = storeddateofbirth;
+     datecreated.textContent = storeddatecreated;
+
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    const logoutBtn = document.getElementById('logout-btn');
+
+    logoutBtn.addEventListener('click', function() {
+        // Clear local storage
+        localStorage.clear();
+        
+        // Redirect to login page
+        window.location.href = 'index.html';
+    });
+});
+</script>
+</html
